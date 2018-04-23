@@ -52,6 +52,12 @@ This command will pull the base docker image and build on it locally. This pulls
 
 __Note:__ If you are on windows, you'll need to remove ``pwd`` and set the volume to the `notebooks` and `data` directory manually. Here is a [blog article](https://rominirani.com/docker-on-windows-mounting-host-directories-d96f3f056a2c) talking about how to mount host directories into docker on Windows 10.
 
+__On Windows__, you won't be able to copy paste this command as his. The `\` that allows a multi-line command in Unix-like shells won't work; you'll have to collapse it into one line like:
+
+```shell
+> docker run -it --rm -p 8000:8000 -p 4040:4040 -v C:\some\folder\notebooks:/home/hadoop/notebooks:rw -v C:\some\folder\data:/home/hadoop/data:rw -v C:\some\folder\musa:/usr/local/lib64/python3.4/site-packages/musa:ro musa/python-workshop
+```
+
 #### 4. Check it works
 
 Visit [http://localhost:8000/](http://localhost:8000/). You should see something like:
