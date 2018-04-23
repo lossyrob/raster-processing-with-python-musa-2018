@@ -1,6 +1,6 @@
 # MUSA Workshop: Raster Processing with Python
 
-This repository hold code that will be utilized for a workshop run on April 23rd as part of UPenn [MUSA](http://penniur.upenn.edu/instruction/graduate/home.html) program.
+This repository holds code for a workshop run on April 23rd as part of UPenn [MUSA](http://penniur.upenn.edu/instruction/graduate/home.html) program.
 
 This workshop will cover techniques in utilizing Python and an open source stack of Python libraries
 for raster processing. We will go over how to load up raster data in Python using the
@@ -43,8 +43,10 @@ This command will pull the base docker image and build on it locally. This pulls
 ```shell
 > docker run -it --rm \
     -p 8000:8000 \
+    -p 4040:4040 \
     -v `pwd`/notebooks:/home/hadoop/notebooks:rw \
     -v `pwd`/data:/home/hadoop/data:rw \
+    -v `pwd`/musa:/usr/local/lib64/python3.4/site-packages/musa:ro \
     musa/python-workshop
 ```
 
